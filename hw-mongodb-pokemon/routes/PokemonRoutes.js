@@ -10,7 +10,7 @@ router.get( '/', ( request, response ) => {
     Pokemon.find().limit(limit).exec().then( result => {
         if(limit){
         // Get a rate-limited number of pokemons
-            response.status( 200 ).send( result );
+            response.status( 200 ).send({ pokemons: result });
         }else{ 
         // GET list of all pokemons       
             response.status( 200 ).send({ pokemons: result });
@@ -28,9 +28,8 @@ router.get( '/:name', ( request, response ) => {
         let names = firstLetter.toUpperCase() + remaining;
 
         Pokemon.findOne({ name : names }).then(pokemon => {
-            console.log(pokemon);
             if(pokemon){
-                response.status( 200 ).send({ pokemons: pokemon}) ;
+                response.status( 200 ).send( pokemon ) ;
             }else {
                 response.status( 404 ).send( 'Pokemon not found' );
             }
@@ -47,7 +46,6 @@ router.get( '/type/:type', ( request, response ) => {
         let types = firstLetter.toUpperCase() + remaining;
         // $in operator selects the documents where the value of a field equals any value in the specified array
         Pokemon.find({ type: { $in: [ types ] } }).then((pokemons) => {
-            console.log(pokemons);
             if (!pokemons || pokemons.length === 0) {
                 response.status( 404 ).send( 'No Pokemon found for this type' );
             }else{
