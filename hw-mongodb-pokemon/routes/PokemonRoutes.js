@@ -18,5 +18,20 @@ router.get( '/', ( request, response ) => {
     });
 });
 
+// Get a pokemon given a name
+router.get( '/:name', ( request, response ) => {  
+    let name = request.params.name;
+    
+    if(name){
+        let firstLetter = name.slice(0, 1);
+        let remaining = name.slice(1).toLowerCase();
+        let names = firstLetter.toUpperCase() + remaining;
+
+        Pokemon.findOne({ name : names }).then(pokemon => {
+            console.log(pokemon);
+            response.status( 200 ).send({ pokemons: pokemon}) ;
+        });
+    };
+});
 
 module.exports = router;
