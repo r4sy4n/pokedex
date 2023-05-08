@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const PokemonData = ({catchPokemon}) => {
     
@@ -32,8 +33,10 @@ const PokemonData = ({catchPokemon}) => {
 
   return (
     <div  className='img__container'>
-      <h3>{catchPokemonData.name.toUpperCase()}</h3>
-      <img src={catchPokemonData.img} alt=''></img>
+       <Link to={`/pokemon/${catchPokemonData.name}`}>
+        <h3>{catchPokemonData.name.toUpperCase()}</h3>
+      </Link>
+      <img src={catchPokemonData.img} alt={catchPokemonData.name}></img>
       <p className='type__container'>Type {catchPokemonData.type}</p> 
     </div>
   )
