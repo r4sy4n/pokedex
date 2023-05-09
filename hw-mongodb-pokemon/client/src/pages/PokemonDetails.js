@@ -5,18 +5,19 @@ import axios from 'axios';
 const PokemonDetails = () => {
   const { name } = useParams();
   const [ pokemonData, setPokemonData ] = useState(null);
-  const url = `https://pokeapi.co/api/v2/pokemon`;
+  const url = `http://localhost:8000/api/v1/pokemons`;
   
   useEffect(() => {
     axios.get(`${url}/${name}`)
       .then(response => {
         setPokemonData(response.data);
+        console.log(response.data)
       })
       .catch(error => {
         console.log(error);
       });
   }, [name]);
-
+  // console.log(pokemonData)
   if (!pokemonData) {
     return <h1>Loading...</h1>
   };
@@ -24,12 +25,12 @@ const PokemonDetails = () => {
   return (
     <div>
       <h1>{pokemonData.name.toUpperCase()}</h1>
-      <img src={pokemonData.sprites.front_default} alt={pokemonData.name}></img>
-      <p>Type: {pokemonData.types.map((item, index) => {
-        return <span key={index}>{item.type.name} </span>
+      <img src={pokemonData.img} alt={pokemonData.name}></img>
+      <p>Type: {pokemonData.type.map((item, index) => {
+        return <span key={index}>{item}</span>
       })}</p>
-      <p>Weight: {pokemonData.weight}</p>
-      <p>Height: {pokemonData.height}</p>
+      <p>Weight: {pokemonData.misc.weight}</p>
+      <p>Height: {pokemonData.misc.height}</p>
       <Link to={'/'}>
         <button>Back</button>
       </Link>

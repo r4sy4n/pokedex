@@ -9,14 +9,15 @@ const ShowPokemon = () => {
   const [ pokemon, setPokemon ] = useState([{name:'' , url:''}]);
   const [ loadMore, setLoadMore ] = useState('');
   const [ loading, setLoading ] = useState(true);
-  const url = `https://pokeapi.co/api/v2/pokemon`;
+  const url = `http://localhost:8000/api/v1/pokemons?limit=20`;
   
   useEffect(() => {
      axios.get(url)
       .then(response => {
+        console.log(response)
         setLoading(false);
-        setPokemon(response.data.results);
-        setLoadMore(response.data.next);
+        setPokemon(response.data.pokemons);
+        setLoadMore(response.data.pokemons);
       })
       .catch(error => {
         console.log(error);
@@ -27,11 +28,12 @@ const ShowPokemon = () => {
     axios.get(loadMore)
       .then(response => {
         setLoading(false);
-        setPokemon([...pokemon, ...response.data.results]);
-        setLoadMore(response.data.next);
+        setPokemon([...pokemon, ...response.data.pokemons]);
+        setLoadMore(response.data.pokemons);
       })
       .catch(error => {
         console.log(error);
+        console.log(loadMore)
       });
   }
 

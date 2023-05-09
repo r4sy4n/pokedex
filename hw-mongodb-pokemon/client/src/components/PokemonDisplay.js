@@ -6,7 +6,7 @@ const PokemonDisplay = ({pokemon}) => {
   return (
     <div className='display__container'>
         {
-            pokemon.map((item, index) => 
+            pokemon && pokemon.map((item, index) => 
              <PokemonData key={index} catchPokemon={item} />
             ) 
         }
