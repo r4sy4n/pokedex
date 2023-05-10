@@ -5,7 +5,6 @@ import { Link, useNavigate } from 'react-router-dom';
 const PokemonData = ({catchPokemon}) => {
   const navigate = useNavigate();
   const [ pokemonType, setPokemonType ] = useState([]);
-  
   const pokeType = (type) => {
     axios.get(`http://localhost:8000/api/v1/pokemons/type/${type}`)
     .then( response => {

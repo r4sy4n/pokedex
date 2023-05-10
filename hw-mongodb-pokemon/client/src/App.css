@@ -32,6 +32,7 @@ img{
 .list__name{
   padding: 2px;
   margin: 2px;
+  color: blue;
 }
 
 .btn{
