@@ -21,7 +21,9 @@
   background-color: #9DC08B;
   padding: 2rem;
 }
-
+img{
+  width: 6rem;
+}
 .type__container{
  text-align: center;
  padding: 2px;

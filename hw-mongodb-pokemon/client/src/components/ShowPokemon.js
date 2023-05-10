@@ -9,7 +9,8 @@ const ShowPokemon = () => {
   const [ pokemon, setPokemon ] = useState([{name:'' , url:''}]);
   const [ loadMore, setLoadMore ] = useState('');
   const [ loading, setLoading ] = useState(true);
-  const url = `http://localhost:8000/api/v1/pokemons?limit=20`;
+  const [ currentLimit, setCurrentLimit] = useState(20);
+  const url = `http://localhost:8000/api/v1/pokemons?limit=${currentLimit}`;
   
   useEffect(() => {
      axios.get(url)
@@ -25,10 +26,11 @@ const ShowPokemon = () => {
   },[url]);
 
   const loadMorePokemon = () => {
-    axios.get(loadMore)
+    axios.get(`http://localhost:8000/api/v1/pokemons?limit=${currentLimit}&offset=0`)
       .then(response => {
         setLoading(false);
         setPokemon([...pokemon, ...response.data.pokemons]);
+        setCurrentLimit( currentLimit + 20 );
         setLoadMore(response.data.pokemons);
       })
       .catch(error => {
