@@ -5,12 +5,14 @@ import { Link, useNavigate } from 'react-router-dom';
 const PokemonData = ({catchPokemon}) => {
   const navigate = useNavigate();
   const [ pokemonType, setPokemonType ] = useState([]);
+  const [selectedType, setSelectedType] = useState(null);
+
   const pokeType = (type) => {
     axios.get(`http://localhost:8000/api/v1/pokemons/type/${type}`)
     .then( response => {
-      console.log(response.data)
-      navigate(`/pokemon/type/${catchPokemon.type}`)
+      setSelectedType(type);
       setPokemonType(response.data);
+      navigate(`/pokemon/type/${type}`)
     })
   }
   return (

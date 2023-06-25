@@ -5,7 +5,17 @@
   align-items: center;
   margin: 2rem 0;
 }
-
+.grid{
+  display: grid;
+  grid-template-columns: repeat(3,auto);
+  gap: 1;
+}
+.flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
 .display__container{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -80,7 +90,11 @@ img{
   .btn {
     margin: 3rem;  
     padding: 1rem 4rem;  
-  }    
+  }
+    .grid {
+      display: flex;
+      flex-direction: column;
+  }
 }
 @media only screen and (max-width: 450px) {
   .display__container {

@@ -15,7 +15,6 @@ const ShowPokemon = () => {
   useEffect(() => {
      axios.get(url)
       .then(response => {
-        console.log(response)
         setLoading(false);
         setPokemon(response.data.pokemons);
         setLoadMore(response.data.pokemons);
@@ -35,7 +34,6 @@ const ShowPokemon = () => {
       })
       .catch(error => {
         console.log(error);
-        console.log(loadMore)
       });
   }
 
