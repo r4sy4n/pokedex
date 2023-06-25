@@ -1,92 +1,99 @@
-# Homeworks
+# Pokedex
 
-Repository for compiling student homeworks
+Welcome to the Pokedex repository! This project is a Pokedex application designed to showcase my skills in manipulating APIs. It utilizes React for the frontend, Express.js and Node.js for the backend, and MongoDB for the database.
 
-## Getting started
+## Features
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+The Pokedex application includes the following features:
+<ul>
+<li>Pokemon List: View a list of Pokemon species with their names and corresponding images.</li>
+<li>Pokemon Details: Click on a Pokemon to view detailed information, including types, abilities, and stats.</li>
+<li>Pagination: Navigate through multiple pages of Pokemon.</li>
+<li>API Integration: Utilize an external API to fetch Pokemon data and images.</li>
+<li>Backend with Express.js and Node.js: Implement server-side functionality using Express.js and Node.js.</li>
+<li>Database with MongoDB: Store and retrieve data from MongoDB for persistent storage.</li>
+</ul>
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+## Repository Structure
 
-## Add your files
+The repository is structured as follows:
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+|- client/               # Directory for the frontend code (React)<br/>
+|  |- src/               # React components and frontend code<br/>
+|  |- public/            # Public assets and index.html file<br/>
+|- server/               # Directory for the server-side code (Express.js, Node.js)<br/>
+|  |- routes/            # Server routes and API endpoints<br/>
+|  |- models/            # Database models and schemas (MongoDB)<br/>
+|- images/               # Directory for images used in the app<br/>
+|- package.json          # Project dependencies and scripts<br/>
+|- README.md             # README file<br/>
 
-```
-cd existing_repo
-git remote add origin https://gitlab.com/uplift-code-camp/students/batch-14/russell/homeworks.git
-git branch -M main
-git push -uf origin main
-```
+Feel free to explore the code and make any modifications or improvements as needed.
 
-## Integrate with your tools
+## Getting Started
 
-- [ ] [Set up project integrations](https://gitlab.com/uplift-code-camp/students/batch-14/russell/homeworks/-/settings/integrations)
+To run the Pokedex application locally, follow these steps:
+<ol>
+<li>Clone the repository or download the source code.</li>
+<li>Open a terminal and navigate to the project's root directory.</li>
+<li>Install the frontend dependencies:</li>
+  <ul>
+<li>Navigate to the client directory: cd client</li>
+<li>Run npm install to install the frontend dependencies.</li>
+  </ul>
+<li>Install the backend dependencies:</li>
+  <ul>
+<li>Navigate back to the project root directory: cd ..</li>
+<li>Navigate to the server directory: cd server</li>
+<li>Run npm install to install the backend dependencies.</li>
+  </ul>
+<li>Set up the MongoDB database:</li>
+  <ul>
+<li>Make sure you have MongoDB installed and running on your machine.</li>
+<li>Update the database configuration in the server/config/db.js file if necessary.</li>
+    </ul>
+<li>Run the app:</li>
+  <ul>
+<li>From the project root directory, start the frontend and backend concurrently: npm run dev</li>
+<li>The app will be accessible at http://localhost:3000.</li>
+    </ul>
+</ol>
 
-## Collaborate with your team
+## Technologies Used
+<ul>
+<li>Frontend:</li>
+  <ul>
+<li>React</li>
+<li>HTML</li>
+<li>CSS</li>
+<li>JavaScript</li>
+  </ul>
+<li>Backend:</li>
+  <ul>
+<li>Express.js</li>
+<li>Node.js</li>
+<li>MongoDB</li>
+    </ul>
+</ul>
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+## API
 
-## Test and Deploy
+The Pokedex application utilizes an external API to fetch Pokemon data. Make sure you have a stable internet connection to ensure proper functionality.
 
-Use the built-in continuous integration in GitLab.
+## Credits
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+This app was developed by Russell Ramiro as a project to showcase programming skills and knowledge of web development technologies.
 
 ## License
-For open source projects, say how it is licensed.
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+This project is licensed under the MIT License. Feel free to use the code as a reference or template for your own bug tracking or issue management applications.
+
+## Contact
+
+If you have any questions, suggestions, or just want to say hello, feel free to reach out to me. My contact information can be found on my portfolio website in the "Contact" section. https://russellramiro.netlify.app/
+
+Thank you for visiting the Pokedex repository!
+
+## Live Site
+
+
