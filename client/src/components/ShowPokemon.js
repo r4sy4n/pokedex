@@ -10,7 +10,7 @@ const ShowPokemon = () => {
   const [ loadMore, setLoadMore ] = useState('');
   const [ loading, setLoading ] = useState(true);
   const [ currentLimit, setCurrentLimit] = useState(20);
-  const url = `http://localhost:8000/api/v1/pokemons?limit=${currentLimit}`;
+  const url = `https://pokedex-qu4j.onrender.com/api/v1/pokemons?limit=${currentLimit}`;
   
   useEffect(() => {
      axios.get(url)
@@ -25,7 +25,7 @@ const ShowPokemon = () => {
   },[url]);
 
   const loadMorePokemon = () => {
-    axios.get(`http://localhost:8000/api/v1/pokemons?limit=${currentLimit}&offset=0`)
+    axios.get(`https://pokedex-qu4j.onrender.com/api/v1/pokemons?limit=${currentLimit}&offset=0`)
       .then(response => {
         setLoading(false);
         setPokemon([...pokemon, ...response.data.pokemons]);

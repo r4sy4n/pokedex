@@ -8,7 +8,7 @@ const PokemonData = ({catchPokemon}) => {
   const [selectedType, setSelectedType] = useState(null);
 
   const pokeType = (type) => {
-    axios.get(`http://localhost:8000/api/v1/pokemons/type/${type}`)
+    axios.get(`https://pokedex-qu4j.onrender.com/api/v1/pokemons/type/${type}`)
     .then( response => {
       setSelectedType(type);
       setPokemonType(response.data);

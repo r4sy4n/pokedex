@@ -5,7 +5,7 @@ import axios from 'axios';
 const PokemonDetails = () => {
   const { name } = useParams();
   const [ pokemonData, setPokemonData ] = useState(null);
-  const url = `http://localhost:8000/api/v1/pokemons`;
+  const url = `https://pokedex-qu4j.onrender.com`;
   
   useEffect(() => {
     axios.get(`${url}/${name}`)
