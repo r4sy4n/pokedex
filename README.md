@@ -96,4 +96,5 @@ Thank you for visiting the Pokedex repository!
 
 ## Live Site
 
+https://pokedex-uplift.netlify.app
 
