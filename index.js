@@ -10,7 +10,7 @@ const app = express();
 app.use( bodyParser.json() );
 app.use( cors() );
 
-mongoose.connect(`mongodb+srv://russellramiro:${Secret_Password}@cluster0.rz5gupu.mongodb.net//pokemondb`);
+mongoose.connect(`mongodb+srv://russellramiro:${Secret_Password}@cluster0.rz5gupu.mongodb.net/pokemondb`);
 
 const baseURL = '/api/v1/pokemons';
 
