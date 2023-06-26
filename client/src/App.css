@@ -14,7 +14,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
+}
+.details{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .display__container{
   display: grid;

@@ -5,7 +5,7 @@ import axios from 'axios';
 const PokemonType = () => {
   const { type } = useParams();
   const [ pokemonData, setPokemonData ] = useState(null);
-  const url = `https://pokedex-qu4j.onrender.com`;
+  const url = `https://pokedex-qu4j.onrender.com/api/v1/pokemons`;
   
   useEffect(() => {
     axios.get(`${url}/type/${type}`)
